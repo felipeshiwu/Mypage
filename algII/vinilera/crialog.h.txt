@@ -1,0 +1,14 @@
+/* Autores: Bruno Freitas Tissei e Felipe Shi Iu Wu
+ * Disciplina: Algoritmos e Estrutura de Dados II
+ * Entrega: 20/11/2015 */
+
+#ifndef _CRIALOG_H
+#define _CRIALOG_H
+
+#include <stdio.h>
+
+void iniciaLog();
+void imprimeLog(char *str);
+void fechaLog();
+
+#endif

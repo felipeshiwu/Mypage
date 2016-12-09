@@ -1,0 +1,34 @@
+/* Programa que implementa as acoes disponiveis para a criacao do log.
+ * Objetivo: modularizar o programa de forma a simplificar o codigo e deixa-lo mais legivel. 
+ *
+ * Autores: Bruno Freitas Tissei e Felipe Shi Iu Wu
+ * Disciplina: Algoritmos e Estrutura de Dados II
+ * Entrega: 20/11/2015 */
+#include "crialog.h"
+
+// arquivo log
+FILE *l;
+
+// inicia o arquivo log e imprime cabecalho
+void iniciaLog() {
+    l = fopen("log.txt", "wb");
+    imprimeLog("========================================================================================");
+    imprimeLog("TP1 ALGORITMOS II 2015/2 - Professor Elias P. Duarte Jr.");
+    imprimeLog("Aluno: Bruno Freitas Tissei - GRR20151602 - bft15");
+    imprimeLog("Aluno: Felipe Shi Iu Wu - GRR20157578 - fsiw15");
+    imprimeLog("========================================================================================");
+}
+
+// funcao chamada a qualquer hora durante a execucao do programa
+// para imprimir uma acao (descrita em uma string passada por parÃ¢metro)
+// no arquivo do log
+void imprimeLog(char *str) {
+    fputs(str, l);
+    fputs("\n", l);
+}
+
+// fecha o arquivo do log, essa funcao eh chamada apenas no final
+// da execucao do programa
+void fechaLog() {
+    fclose(l);
+}

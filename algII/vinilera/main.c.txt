@@ -1,0 +1,174 @@
+/* Programa destinado ao trabalho pratico 1 de Algoritmos e Estrutura de Dados II 
+ *
+ * Autores: Bruno Freitas Tissei e Felipe Shi Iu Wu
+ * Disciplina: Algoritmos e Estrutura de Dados II
+ * Entrega: 20/11/2015 */
+
+#include "main.h"
+
+tipoFila fila;
+tipoPilha pilha;
+
+// inicio do programa
+int main() {
+    iniciaLog();
+    inicPilha(&pilha, 1);
+    criarFila();
+    return 0;
+}
+
+// da tempo para o usuario observar as alteracoes feitas e precionar enter quando estiver pronto
+void continuar() {
+    char c;
+    printf("\nPara continuar pressione ENTER");
+    scanf("%c", &c);
+    scanf("%c", &c);
+}
+
+// limpa o buffer do stdin para o funcionamento correto do fgets
+void cleanBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+// esvazia fila de clientes e, para cada cliente, empilha um recibo correspondente na pilha de recibos
+// as operacoes envolvendo a fila estao implementadas em fila.c e
+// as operacoes envolvendo a pilha estao implementadas em pilha.c
+bool atenderCliente(tipoFila *f) {
+    cliente c;
+    if (!vaziaFila(f)) {
+        c = desenfileira(f);
+        push(&pilha, c.nome, c.gastoTotal, 1);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// cria a fila de clientes e pergunta pelas informacoes de cada cliente, alem das operacoes
+// envolvendo a pilha, que funcionam corretamente apos atender clientes
+// as operacoes envolvendo a fila estao implementadas em fila.c e
+// as operacoes envolvendo a pilha estao implementadas em pilha.c
+void criarFila() {
+    cliente c;
+    int acao;
+    inicFila(&fila);
+    printf("\n===============================================================\n");
+    printf("** ENFILEIRAR CLIENTES PARA O PAGAMENTO **\n\n");
+    printf("1. Novo cliente\n2. Imprimir fila\n3. Atender cliente\n4. Imprimir pilha de recibos\n5. Inverter pilha de recibos\n0. Terminar programa\n\n");
+    printf("Insira o codigo da operacao desejada: ");
+    while (scanf("%d",&acao) && acao) {
+        if (acao == 0) {
+            fechaLog();
+            break;
+        }
+        switch (acao) {
+            case 1:
+                c = criarCliente();
+                if (enfileira(&fila, c))
+                    printf("\n%s INSERIDO COM SUCESSO, VALOR TOTAL PARA PAGAMENTO: R$%.2f", 
+                            c.nome, c.gastoTotal);
+                else
+                    printf("\n%s NÃƒO PODE SER INSERIDO!", c.nome);
+                continuar();
+                break;
+            case 2:
+                printf("\nFILA DE CLIENTES:\n");
+                imprimeFila(&fila);
+                continuar();
+                break;
+            case 3:
+                if (atenderCliente(&fila))
+                    printf("\nCLIENTE ATENDIDO COM SUCESSO!");
+                else 
+                    printf("\nNENHUM CLIENTE NA FILA!");
+                continuar();
+                break;
+            case 4:
+                printf("\nPILHA DE RECIBOS:\n");
+                imprimePilha(pilha, 1);
+                continuar();
+                break;
+            case 5:
+                printf("\nPILHA DE RECIBOS INVERTIDA:\n");
+                invertePilha(&pilha);
+                continuar();
+                break;
+        }
+        printf("\n===============================================================\n");
+        printf("** ENFILEIRAR CLIENTES PARA O PAGAMENTO **\n\n");
+        printf("1. Novo cliente\n2. Imprimir fila de clientes\n3. Atender cliente\n4. Imprimir pilha de recibos\n5. Inverter pilha de recibos\n0. Terminar programa\n\n");
+        printf("Insira o codigo da operacao desejada: ");
+    } 
+}
+
+// cria o cliente e pergunta pelas informacoes de sua lista de compras
+// as operacoes envolvendo a lista estao implementadas em lista.c
+cliente criarCliente() {
+    cliente c;
+    tipoLista listaCompras;
+    char nome[MAXS], artista[MAXS], album[MAXS];
+    int acao, ndisco = 1, id;
+    float valor, result;
+
+    inicLista(&listaCompras);
+
+    printf("Insira o nome do(a) cliente: ");
+    cleanBuffer();
+    fgets(nome, MAXS, stdin);
+    nome[strlen(nome)-1] = '\0';
+    strcpy(c.nome, nome);
+
+    printf("\n===============================================================\n");
+    printf("** DADOS DOS DISCOS PARA A LISTA DE COMPRAS DO(A) %s **\n\n", c.nome);
+    printf("1. Adicionar disco\n2. Remover disco\n3. Imprimir lista de compras\n0. Entrar na fila\n\n");
+    printf("Insira o codigo da operacao desejada: ");
+    while (scanf("%d", &acao) && acao) {
+        switch (acao) {
+            case 1:
+                cleanBuffer();
+                printf(" > Nome do artista: ");
+                fgets(artista, MAXS, stdin);
+                artista[strlen(artista)-1] = '\0';
+
+                printf(" > Nome do album: ");
+                fgets(album, MAXS, stdin);
+                album[strlen(album)-1] = '\0';
+
+                printf(" > Valor: ");
+                scanf("%f", &valor);
+                c.gastoTotal += valor;
+
+                insereLista(&listaCompras, ndisco, artista, album, valor);
+                printf("\nDISCO %d (%s) INSERIDO COM SUCESSO!", ndisco++, album);
+                continuar();
+                break;
+            case 2:
+                printf("Numero do disco a ser removido: ");
+                scanf("%d", &id);
+
+                result = removeLista(&listaCompras, id);
+                if (result == -1)
+                    printf("\nLISTA DE COMPRAS VAZIA!");
+                else if (result == -2)
+                    printf("\nDISCO %d NAO ESTAH NA LISTA DE COMPRAS!", id);
+                else {
+                    printf("\nDISCO %d (R$%.2f) REMOVIDO COM SUCESSO", id, result);
+                    c.gastoTotal -= result;
+                }
+                continuar();
+                break;
+            case 3:
+                printf("\nLISTA DE COMPRAS:\n");
+                imprimeLista(listaCompras);
+                continuar();
+                break;
+        }
+        printf("\n===============================================================\n");
+        printf("** DADOS DOS DISCOS PARA A LISTA DE COMPRAS DO(A) %s **\n\n", c.nome);
+        printf("1. Adicionar\n2. Remover\n3. Imprimir\n0. Entrar na fila\n\n");
+        printf("Insira o codigo da operacao desejada: ");
+    }
+
+    return c;
+}
