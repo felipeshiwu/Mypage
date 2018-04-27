@@ -37,7 +37,6 @@ li a:hover:not(.active) {
 .page {
     margin-left:20%;
     padding:1px 16px;
-    height:1000px;
     font-size: 20px;
     display: none;
 }
