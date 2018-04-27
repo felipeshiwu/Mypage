@@ -266,44 +266,44 @@ function generationLines() {
             lines.push(new Line(centerX-200,centerY+200,centerX+200,centerY+200));
             break;
         case 4:
-            lines.push(new Line(centerX-200,200,centerX+200,200)); //linha _ topo
-            lines.push(new Line(centerX+200,200,centerX+200,600)); //linha | direita
-            lines.push(new Line(centerX-200,200,centerX-200,600)); //linha | esquerda
-            lines.push(new Line(centerX-200,600,centerX+200,600)); //linha _ baixo
+            lines.push(new Line(centerX-200,200,centerX+200,200));
+            lines.push(new Line(centerX+200,200,centerX+200,600));
+            lines.push(new Line(centerX-200,200,centerX-200,600));
+            lines.push(new Line(centerX-200,600,centerX+200,600));
             break;
         case 5:
-        lines = [new Line(centerX,centerY-300,centerX+300,centerY-100), //linha \ direita
-            new Line(centerX,centerY-300,centerX-300,centerY-100), //linha / esquerda
-            new Line(centerX+300,centerY-100,centerX+200,centerY+200), //linha \ esquerda
-            new Line(centerX-300,centerY-100,centerX-200,centerY+200), //linha / direita
-            new Line(centerX-200,centerY+200,centerX+200,centerY+200)]; //linha _ baixo
+            lines.push(new Line(centerX,centerY-300,centerX+300,centerY-100));
+            lines.push(new Line(centerX,centerY-300,centerX-300,centerY-100));
+            lines.push(new Line(centerX+300,centerY-100,centerX+200,centerY+200));
+            lines.push(new Line(centerX-300,centerY-100,centerX-200,centerY+200));
+            lines.push(new Line(centerX-200,centerY+200,centerX+200,centerY+200));
             break;
         case 6:
-        lines = [new Line(centerX-200,200,centerX+200,200), //linha _ topo
-            new Line(centerX-200,200,centerX-300,400), //linha / esq
-            new Line(centerX-300,400,centerX-200,600), //linha \ esq
-            new Line(centerX+200,200,centerX+300,400), //linha / dir
-            new Line(centerX+300,400,centerX+200,600), //linha \ dir
-            new Line(centerX-200,600,centerX+200,600)]; //linha _ baixo
+            lines.push(new Line(centerX-200,200,centerX+200,200));
+            lines.push(new Line(centerX-200,200,centerX-300,400));
+            lines.push(new Line(centerX-300,400,centerX-200,600));
+            lines.push(new Line(centerX+200,200,centerX+300,400));
+            lines.push(new Line(centerX+300,400,centerX+200,600));
+            lines.push(new Line(centerX-200,600,centerX+200,600));
             break;
         case 7:
-        lines = [new Line(centerX-250,200,centerX,100), //linha / topo
-            new Line(centerX,100,centerX+250,200), //linha / topo
-            new Line(centerX-250,200,centerX-400,350), //linha / esq
-            new Line(centerX+250,200,centerX+400,350), //linha \ dir
-            new Line(centerX-400,350,centerX-200,600), //linha \ esq
-            new Line(centerX+400,350,centerX+200,600), //linha / dir
-            new Line(centerX-200,600,centerX+200,600)]; //linha _ baixo
+            lines.push(new Line(centerX-250,200,centerX,100));
+            lines.push(new Line(centerX,100,centerX+250,200));
+            lines.push(new Line(centerX-250,200,centerX-400,350));
+            lines.push(new Line(centerX+250,200,centerX+400,350));
+            lines.push(new Line(centerX-400,350,centerX-200,600));
+            lines.push(new Line(centerX+400,350,centerX+200,600));
+            lines.push(new Line(centerX-200,600,centerX+200,600));
             break;
         case 8:
-        lines = [new Line(centerX-220,100,centerX+220,100), //linha _ topo
-            new Line(centerX-220,100,centerX-420,300), //linha / esq
-            new Line(centerX-420,300,centerX-420,500), //linha | esq
-            new Line(centerX-420,500,centerX-220,700), //linha \ esq
-            new Line(centerX+220,100,centerX+420,300), //linha / esq
-            new Line(centerX+420,300,centerX+420,500), //linha | esq
-            new Line(centerX+420,500,centerX+220,700), //linha \ esq
-            new Line(centerX-220,700,centerX+220,700)]; //linha _ baixo
+            lines.push(new Line(centerX-220,100,centerX+220,100));
+            lines.push(new Line(centerX-220,100,centerX-420,300));
+            lines.push(new Line(centerX-420,300,centerX-420,500));
+            lines.push(new Line(centerX-420,500,centerX-220,700));
+            lines.push(new Line(centerX+220,100,centerX+420,300));
+            lines.push(new Line(centerX+420,300,centerX+420,500));
+            lines.push(new Line(centerX+420,500,centerX+220,700));
+            lines.push(new Line(centerX-220,700,centerX+220,700));
             break;
         default:
             break;
