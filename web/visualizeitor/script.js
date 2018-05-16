@@ -44,6 +44,7 @@ function achaMateria(aluno){
     opt=0;
     for(i=0;i<aluno.length;i++){
         materia=aluno[i].childNodes[29].firstChild.nodeValue;
+        console.log(aluno[1].childNodes);
         estrutura=aluno[i].childNodes[45].firstChild.nodeValue;
         status=aluno[i].childNodes[27].firstChild.nodeValue;
         if(estrutura=="Obrigatórias"){
