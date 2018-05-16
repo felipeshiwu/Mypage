@@ -1,0 +1,51 @@
+table, td, th {
+    border: 1px solid black;
+}
+
+table{
+	border: 1px solid black;
+	margin-top:2%;
+	margin-left:3%;
+}
+
+.legenda{
+	margin-left: 18%;
+	margin-top: 5%;
+}
+
+.semestre {
+	background:black;
+	color:white;
+}
+
+button{
+
+}
+
+input{
+	margin-left: 30%;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+p {
+ color:white;
+}
+
+body {
+	background: #434343;
+}
+
+.wrapper {
+	height: 400px;
+	width: 800px;
+	background: #ffffff;
+	position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+}
