@@ -17,28 +17,6 @@ html {
   z-index: -100;
   width: 100%;
 }
- 
-@media (min-aspect-ratio: 16/9) {
-  #videoBG {
-    width: 100%;
-    height: auto;
-  }
-}
-@media (max-aspect-ratio: 16/9) {
-  #videoBG {
-    width: 100%;
-    height: auto;
-  }
-}
-@media (max-width: 767px) {
-  #videoBG {
-    display: none;
-  }
-  body {
-    background: url('img/cover.png');
-    background-size: cover;
-  }
-}
 
 body {
   background-color:#e6e6e6;
@@ -50,7 +28,6 @@ nav {position: absolute;z-index:999999999;}
 .nav-wrapper .brand-logo img {
   margin-top: 27px;
   height: 60px;
-  
 }
 
 .nav-wrapper > ul.center li {
@@ -66,11 +43,11 @@ nav {position: absolute;z-index:999999999;}
 
 .title {
   position: absolute;
-  top: 40%;
+  top: 35%;
   width: 100%;
-  font-size: 36px;
+  font-size: 5vw;
   letter-spacing: 3px;
-  font-family: Oswald, sans-serif;
+  font-family: 'Prata';
   text-align: center;
 }
 
@@ -79,6 +56,7 @@ nav {position: absolute;z-index:999999999;}
   letter-spacing: 0;
   font-weight: 300;
   line-height: 24px;
+  font-size: 3vw;
 }
 
 .title > span a {
@@ -94,255 +72,140 @@ section {
   height: 100vh;
 }
 
-#instagram-photo {
-  margin: auto;
-  height: 70vh;
-  display: block;
-  margin-top: 15vh;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 #about {
   color: #000;
   text-transform: none;
-  line-height: 1.1em;
+  line-height: 1.5;
   font-style: normal;
-  font-family: 'Almarai';
 }
 
-.s7 > h1 {
-  margin-top: 35vh;
-  font-weight: 600;
-  font-size: 50px;
-  letter-spacing: .025em;
-  padding-left: 10vh;
+.ig-card {
+  height: 100vh;
+  margin: 0;
+  background-color: #e6e6e6;
 }
 
-.s7 > p {
+.card-image {
+  overflow: hidden;
+}
+
+#instagram-photo {
+  min-height: 90%;
+  min-width: 90%;
+  filter: grayscale(100%);
+}
+
+.card-crop {
+  margin-left: 25%;
+  margin-top: 70px;
+  margin-right: 10%;
+  max-height: 83%;
+  overflow: hidden;
+}
+
+.card-content{  
+  font-family: 'Prata';
+  margin-right: 15%;
+}
+
+.ig-card h1 {
+  padding-top: 15%;
+  font-weight: 500;
+  font-size: 4vw;
+  letter-spacing: 0em;
+}
+
+.ig-card p {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 18px;
 	letter-spacing: 0em;
 	text-transform: none;
 	line-height: 2em;
-  padding-left: 10vh;
   font-family: 'Cabin';
+  line-height: 1.5;
 }
 
-.mouse{
-  width: 52px;
-  height: 88px;
-  position: absolute;
-  top: 80%;
-  left: 48.5%;
-  background: #000 linear-gradient(transparent 0%,
-                                     transparent 50%,
-                                   #e6e6e6 50%,
-                                   #e6e6e6 100%);
-  background-size: 100% 200%;
-  border-radius: 100px;
-  animation: colorSlide 5s linear infinite,
-             nudgeMouse 5s ease-out infinite;
+.card-action a {
+  color: #0071bc !important;
 }
 
-.mouse::before,
-.mouse:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
+.mobile-card {
+  display: none;
 }
 
-.mouse::before {
-  width: 46px;
-  height: 82px;
-  border-radius: 100px;
-  background-color: #000;
+#resume {
+  background-color: black;
 }
 
-.mouse:after {
-  background-color: #e6e6e6;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  animation: trackBallSlide 5s linear infinite;
-}
-
-/* Animations */
-@keyframes colorSlide{
-  0% {
-    background-position: 0% 100%;
+@media (max-width: 1306px) {
+  @media (min-aspect-ratio: 16/9) {
+    #video-background {
+      width: auto;
+      height: 100%;
+    }
   }
-  20% {
-    background-position: 0% 0%;
-  }
-  21% {
-    background-color: #4e5559;
-  }
-  29.99% {
-    background-color: #e6e6e6;
-    background-position: 0% 0%;
-  }
-  30% {
-    background-color: #4e5559;
-    background-position: 0% 100%;
-  }
-  50% {
-    background-position: 0% 0%;
-  }
-  51% {
-    background-color: #4e5559;
-  }
-  59% {
-    background-color: #e6e6e6;
-    background-position: 0% 0%;
-  }
-  60% {
-    background-color: #4e5559;
-    background-position: 0% 100%;
-  }
-  80% {
-    background-position: 0% 0%;
-  }
-  81% {
-    background-color: #4e5559;
-  }
-  90%, 100% {
-    background-color: #e6e6e6;
+  @media (max-aspect-ratio: 16/9) {
+    #video-background {
+      width: auto;
+      height: 100%;
+    }
   }
 }
 
-@keyframes colorText{
-  21% {
-    color: #4e5559;
+@media (max-width: 767px) {
+  #video-background {
+    display: none;
   }
-  30% {
-    color: #e6e6e6;
+  #video-bg-section {
+    background-image: url("../img/cover.jpg");
+    background-size: cover;
   }
-  51% {
-    color: #4e5559;
-  }
-  60% {
-    color: #e6e6e6;
-  }
-  81% {
-    color: #4e5559;
-  }
-  90% {
-    color: #e6e6e6;
-  }
-} 
+}
 
-@keyframes trackBallSlide{
-  0%{
-    opacity: 1;
-    transform: scale(1) translateY(-20px);
+@media (max-width: 1280px) {
+  .brand-logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
-  6%{
-    opacity: 1;
-    transform: scale(0.9) translateY(5px);
-  }
-  14%{
-    opacity: 0;
-    transform: scale(0.4) translateY(40px);
-  }
-  15%, 19%{
-    opacity: 0;
-    transform: scale(0.4) translateY(-20px);
-  }
-  28%, 29.99%{
-    opacity: 1;
-    transform: scale(1) translateY(-20px);
-  }
-  30%{
-    opacity: 1;
-    transform: scale(1) translateY(-20px);
-  }
-  36%{
-    opacity: 1;
-    transform: scale(0.9) translateY(5px);
-  }
-  44%{
-    opacity: 0;
-    transform: scale(0.4) translateY(40px);
-  }
-  45%, 49%{
-    opacity: 0;
-    transform: scale(0.4) translateY(-20px);
-  }
-  58%, 59.99%{
-    opacity: 1;
-    transform: scale(1) translateY(-20px);
-  }
-  60%{
-    opacity: 1;
-    transform: scale(0.9) translateY(-20px);
-  }
-  66%{
-    opacity: 1;
-    transform: scale(0.9) translateY(5px);
-  }
-  74%{
-    opacity: 0;
-    transform: scale(0.4) translateY(40px);
-  }
-  75%, 79%{
-    opacity: 0;
-    transform: scale(0.4) translateY(-20px);
-  }
-  88%, 100%{
-    opacity: 1;
-    transform: scale(1) translateY(-20px);
+
+  .nav-wrapper ul {
+    display: none;
   }
 }
-@keyframes nudgeMouse{
-  0%{
-    transform: translateY(0);
+
+@media (max-width: 601px) {
+  .full-card {
+    display: none;
   }
-  20%{
-    transform: translateY(8px);
+
+  .mobile-card {
+    display: contents;
   }
-  30%{
-    transform: translateY(0);
+
+  .card-crop {
+    margin-left: 15%;
+    margin-top: 70px;
+    margin-right: 15%;
+    max-height: 40vh;
+    width: auto;
+    overflow: hidden;
   }
-  50%{
-    transform: translateY(8px);
+
+  .card-content {
+    margin-right: 10%;
+    margin-left: 10%;
   }
-  60%{
-    transform: translateY(0);
+
+  .ig-card h1 {
+    padding-top: 1%;
+    font-weight: 500;
+    font-size: 4vw;
+    letter-spacing: 0em;
   }
-  80%{
-    transform: translateY(8px);
-  }
-  90%{
-    transform: translateY(0);
-  }
-}
-@keyframes nudgeText {
-  0%{
-    transform: translateY(0);
-  }
-  20%{
-    transform: translateY(2px);
-  }
-  30%{
-    transform: translateY(0);
-  }
-  50%{
-    transform: translateY(2px);
-  }
-  60%{
-    transform: translateY(0);
-  }
-  80%{
-    transform: translateY(2px);
-  }
-  90%{
-    transform: translateY(0);
+
+  .card-action a {
+    margin-left: 11%;
   }
 }
