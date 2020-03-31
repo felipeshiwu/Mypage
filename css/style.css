@@ -94,6 +94,42 @@ section {
   height: 100vh;
 }
 
+#instagram-photo {
+  margin: auto;
+  height: 70vh;
+  display: block;
+  margin-top: 15vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#about {
+  color: #000;
+  text-transform: none;
+  line-height: 1.1em;
+  font-style: normal;
+  font-family: 'Ibarra Real Nova';
+}
+
+.s7 > h1 {
+  margin-top: 35vh;
+  font-weight: 600;
+  font-size: 50px;
+  letter-spacing: .025em;
+  padding-left: 10vh;
+}
+
+.s7 > p {
+	font-weight: 400;
+	font-style: normal;
+	font-size: 18px;
+	letter-spacing: 0em;
+	text-transform: none;
+	line-height: 2em;
+  padding-left: 10vh;
+}
+
 .mouse{
   width: 52px;
   height: 88px;
