@@ -1,0 +1,72 @@
+#video-background {
+  position: fixed;
+  right: 0; 
+  top: 0;
+  z-index: -100;
+}
+ 
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  #videoBG {
+    display: none;
+  }
+  body {
+    background: url('img/cover.png');
+    background-size: cover;
+  }
+}
+
+body {
+  background-color:#555;
+  font-family: 'Jura';
+}
+.navbar-fixed {position: absolute;z-index:999999999;}
+
+.nav-wrapper .brand-logo img {
+  height: 140px;
+}
+
+.nav-wrapper > ul.center li {
+  font-size: 30px;
+  padding-top: 25px;
+  float: none;
+  display: inline-block;
+}
+
+.nav-wrapper > ul.center li a{
+  font-size: 18px;
+  color: #e6e6e6;
+}
+
+h1 {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #e6e6e6;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+}
+
+h1 span {
+  font-family: sans-serif;
+  letter-spacing: 0;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+h1 span a {
+  color: #0071bc;
+}
