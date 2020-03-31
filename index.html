@@ -10,10 +10,11 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
-    <link href="css/estilo.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -22,27 +23,55 @@
 <body>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.js"></script>
+    <script src="js/main.js"></script> 
     
-    <section>
-        <!-- Navigation -->
-        <div class="navbar-fixed">
-            <nav class="transparent z-depth-0">
-                <div class="nav-wrapper container">
-                    <a href="index.html" class="brand-logo left"><img src="img/logo.png"/></a>
-                    <ul id="nav-mobile" class="center hide-on-med-and-down">
-                        <li><a href="https://github.com/felipeshiwu" target="_blank">Github</a></li>
-                        <li><a href="https://www.instagram.com/felipeshwu/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </nav>
+    <section id="video-bg-section">
+        <!-- Navigation bar -->
+        <nav class="transparent z-depth-0">
+            <div class="nav-wrapper container">
+                <a href="https://thefelipes.site/" class="brand-logo left"><img src="img/logo.png"/></a>
+                <ul id="nav-mobile" class="center hide-on-med-and-down">
+                    <li><a onclick="scrollSmoothTo('about')">About</a></li>
+                    <li><a onclick="scrollSmoothTo('resume')">Resume</a></li>
+                    <li><a href="https://github.com/felipeshiwu" target="_blank">Github</a></li>
+                    <li><a href="https://www.instagram.com/felipeshwu/" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--  Content of video background  -->
+        <article>
+            <h1 class="title">Felipe S. Iu Wu <br /> <span>(Graduated from the <a>UFPR</a>, with ticket in hands to become a <a>Data Scientist</a>)</span></h1>
+        </article>
+        <div class="mouse"></div>
+        
+        <video autoplay loop id="video-background" poster="img/cover.png" muted plays-inline>
+            <source src="subway.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- About 
+    <section id="about">
+        <div class="row">
+            <div class="col s6">
+                <p>felfdjsfafsda</p>
+            </div>
+            <div class="col s6">
+                <p>fdhsyufa</p>
+            </div>
         </div>
     </section>
-    <!--  Content  -->
-    <article>
-        <h1>Felipe Shi W. <br /> <span>(Graduated from the <a>UFPR</a>, with ticket in hand to become a <a>Data Scientist</a>)</span></h1>
-    </article>
-    <video autoplay loop id="video-background" poster="img/cover.png" muted plays-inline>
-        <source src="subway.mp4" type="video/mp4">
-    </video>
+
+    <!-- Resume 
+    <section id="resume">
+        <div class="row">
+            <div class="col s6">
+                <p>felfdjsfafsda</p>
+            </div>
+            <div class="col s6">
+                <p>fdhsyufa</p>
+            </div>
+        </div>
+    </section>-->
+    
 </body>
 </html>
