@@ -109,7 +109,7 @@ section {
   text-transform: none;
   line-height: 1.1em;
   font-style: normal;
-  font-family: 'Ibarra Real Nova';
+  font-family: 'Almarai';
 }
 
 .s7 > h1 {
@@ -128,6 +128,7 @@ section {
 	text-transform: none;
 	line-height: 2em;
   padding-left: 10vh;
+  font-family: 'Cabin';
 }
 
 .mouse{
