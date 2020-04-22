@@ -164,12 +164,10 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 800px;
   text-align: center;
 }
 
 #portfolio h1 {
-  color: #000;
   font-family: 'Prata';
   margin: 0px;
   text-align: center;
@@ -177,32 +175,42 @@ section {
 
 }
 
-.video-recommender {
+#video-recommender {
   height: 500px;
-  min-width: 300px;
   margin-top: 5%;
   background-color: black;
   background-position: center;
-  border: transparent;
+  border:2px solid white;
+  transition: 1s ease;
+}
+
+#port-title {
+  margin-top: 50%;
+  padding-top: 15px;
+}
+
+#port-subtitle {
+  margin-top: 0px;
+  font-family: 'Lovers Quarrel';
+  font-size: 2vw;
 }
 
 #portfolio a {
   color: #e6e6e6;
 }
 
-
-.video-recommender:hover {
+#video-recommender:hover {
+  color: #000;
   background-color: #e6e6e6;
-  color: #000;
+  border:0px;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  transition: 1s ease;
 }
 
-.video-recommender p:hover {
-  color: #000;
-  display: block;
-}
-
-.video-recommender p {
-  display: none;
+.page-footer {
+  background-color: #000;
 }
 
 @media (max-width: 1306px) {
