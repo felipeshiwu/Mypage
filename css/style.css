@@ -158,6 +158,53 @@ section {
   color: #0071bc;
 }
 
+#portfolio {
+  background-image: url(../img/background3.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 800px;
+  text-align: center;
+}
+
+#portfolio h1 {
+  color: #000;
+  font-family: 'Prata';
+  margin: 0px;
+  text-align: center;
+  padding-top: 5%;
+
+}
+
+.video-recommender {
+  height: 500px;
+  min-width: 300px;
+  margin-top: 5%;
+  background-color: black;
+  background-position: center;
+  border: transparent;
+}
+
+#portfolio a {
+  color: #e6e6e6;
+}
+
+
+.video-recommender:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.video-recommender p:hover {
+  color: #000;
+  display: block;
+}
+
+.video-recommender p {
+  display: none;
+}
+
 @media (max-width: 1306px) {
   @media (min-aspect-ratio: 16/9) {
     #video-background {
