@@ -248,6 +248,10 @@ section {
   .nav-wrapper ul {
     display: none;
   }
+
+  #portfolio {
+    height: 750px;
+  }
 }
 
 @media (max-width: 601px) {
