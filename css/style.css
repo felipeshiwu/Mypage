@@ -313,4 +313,8 @@ section {
   .title > span {
     font-size: 15px;
   }
+
+  #portfolio {
+    height: 210vh;
+  }
 }
