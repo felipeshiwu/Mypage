@@ -317,4 +317,8 @@ section {
   #portfolio {
     height: 240vh;
   }
+
+  #video-recommender {
+    height: 67vh;
+  }
 }
